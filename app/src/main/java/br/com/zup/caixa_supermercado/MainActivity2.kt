@@ -3,7 +3,9 @@ package br.com.zup.caixa_supermercado
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import br.com.zup.caixa_supermercado.databinding.ActivityMain2Binding
 import br.com.zup.caixa_supermercado.databinding.ActivityMainBinding
 import br.com.zup.caixa_supermercado.model.Produto
@@ -13,6 +15,7 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding : ActivityMain2Binding =  ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -30,8 +33,7 @@ class MainActivity2 : AppCompatActivity() {
             onBackPressed()
         }
     }
-
-
-
 }
+
+
 
