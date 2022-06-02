@@ -10,19 +10,23 @@ import br.com.zup.caixa_supermercado.model.Produto
 
 class MainActivity2 : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        val binding = ActivityMain2Binding.inflate(layoutInflater)
-
-        val produto = intent.getParcelableExtra<Produto>("Produto")
-
-
-        Toast.makeText(this, "${produto?.getValor()}", Toast.LENGTH_LONG)
+        var produto  =  intent.getParcelableExtra<Produto>("Produto")
+        val binding : ActivityMain2Binding =  ActivityMain2Binding.inflate(layoutInflater)
         produto?.let {
             val total = it.getQtd() * it.getValor()
-
-            binding.tvValorTotal.text = "O VALOR TOTAL DA COMPRAaaa É DE: R$ ${total}"
+            val textofinal = getString(R.string.descricao_soma_carrinho).plus(total)
+            binding.tvValorTotal.text = textofinal
         }
     }
+
+    override fun onStart() {
+
+        super.onStart()
+
+    }
 }
+
