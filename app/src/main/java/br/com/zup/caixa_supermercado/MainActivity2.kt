@@ -13,20 +13,25 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-        var produto  =  intent.getParcelableExtra<Produto>("Produto")
         val binding : ActivityMain2Binding =  ActivityMain2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val produto  =  intent.getParcelableExtra<Produto>("Produto")
+        var textofinal = ""
+        val botaoRefazer = binding.btRefazerCompra
         produto?.let {
             val total = it.getQtd() * it.getValor()
-            val textofinal = getString(R.string.descricao_soma_carrinho).plus(total)
-            binding.tvValorTotal.text = textofinal
+           textofinal  = this.getString(R.string.descricao_soma_carrinho, total.toString())
+
+        }
+        binding.tvTextoResultado.text = textofinal
+        botaoRefazer.setOnClickListener {
+            onBackPressed()
         }
     }
 
-    override fun onStart() {
 
-        super.onStart()
 
-    }
 }
 

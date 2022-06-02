@@ -6,6 +6,6 @@
     <string name="quantidade_produto">Quantidade do produto</string>
     <string name="valor_unitario">Valor (unitário) do produto</string>
     <string name="botao_calcular">Calcular</string>
-    <string name="descricao_soma_carrinho">O VALOR TOTAL DA COMPRA É DE: R$  </string>
+    <string name="descricao_soma_carrinho">O VALOR TOTAL DA COMPRA É DE: R$ %s  </string>
 
 </resources>
